@@ -10,11 +10,11 @@ const SONGS = [
     { id: 's3',  title: 'Invincible',                   artist: 'DEAF KEV',                 album: 'NCS Release',   src: '3.mp3',  cover: 'covers/3.jpg' },
     { id: 's4',  title: 'My Heart',                     artist: 'Different Heaven & EH!DE', album: 'NCS Release',   src: '4.mp3',  cover: 'covers/4.jpg' },
     { id: 's5',  title: 'Heroes Tonight (feat. Johnning)', artist: 'Janji',                 album: 'NCS Release',   src: '5.mp3',  cover: 'covers/5.jpg' },
-    { id: 's6',  title: 'Rabba',                        artist: 'Salam-e-Ishq',             album: 'Salam-e-Ishq',  src: 'songs/6.mp3',  cover: 'covers/6.jpg' },
-    { id: 's7',  title: 'Sakhiyaan',                    artist: 'Salam-e-Ishq',             album: 'Salam-e-Ishq',  src: 'songs/7.mp3',  cover: 'covers/7.jpg' },
-    { id: 's8',  title: 'Bhula Dena',                   artist: 'Salam-e-Ishq',             album: 'Salam-e-Ishq',  src: 'songs/8.mp3',  cover: 'covers/8.jpg' },
-    { id: 's9',  title: 'Tumhari Kasam',                artist: 'Salam-e-Ishq',             album: 'Salam-e-Ishq',  src: 'songs/9.mp3',  cover: 'covers/9.jpg' },
-    { id: 's10', title: 'Na Jaana',                     artist: 'Salam-e-Ishq',             album: 'Salam-e-Ishq',  src: 'songs/10.mp3', cover: 'covers/10.jpg' },
+    { id: 's6',  title: 'Rabba',                        artist: 'Salam-e-Ishq',             album: 'Salam-e-Ishq',  src: '6.mp3',  cover: 'covers/6.jpg' },
+    { id: 's7',  title: 'Sakhiyaan',                    artist: 'Salam-e-Ishq',             album: 'Salam-e-Ishq',  src: '7.mp3',  cover: 'covers/7.jpg' },
+    { id: 's8',  title: 'Bhula Dena',                   artist: 'Salam-e-Ishq',             album: 'Salam-e-Ishq',  src: '8.mp3',  cover: 'covers/8.jpg' },
+    { id: 's9',  title: 'Tumhari Kasam',                artist: 'Salam-e-Ishq',             album: 'Salam-e-Ishq',  src: '9.mp3',  cover: 'covers/9.jpg' },
+    { id: 's10', title: 'Na Jaana',                     artist: 'Salam-e-Ishq',             album: 'Salam-e-Ishq',  src: '10.mp3', cover: 'covers/10.jpg' },
 ];
 
 const PLACEHOLDER = 'data:image/svg+xml;utf8,' + encodeURIComponent(
