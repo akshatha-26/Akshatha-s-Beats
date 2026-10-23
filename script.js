@@ -5,11 +5,11 @@ console.log('Welcome to Akshathas Spotify');
    1. SONG LIBRARY  — edit this list to match the files in songs/ & covers/
    ===================================================================== */
 const SONGS = [
-    { id: 's1',  title: 'Mortals',                      artist: 'Warriyo',                  album: 'NCS Release',   src: 'songs/1.mp3',  cover: 'covers/1.jpg' },
-    { id: 's2',  title: 'Huma-Huma',                    artist: 'Cielo',                    album: 'Single',        src: 'songs/2.mp3',  cover: 'covers/2.jpg' },
-    { id: 's3',  title: 'Invincible',                   artist: 'DEAF KEV',                 album: 'NCS Release',   src: 'songs/3.mp3',  cover: 'covers/3.jpg' },
-    { id: 's4',  title: 'My Heart',                     artist: 'Different Heaven & EH!DE', album: 'NCS Release',   src: 'songs/4.mp3',  cover: 'covers/4.jpg' },
-    { id: 's5',  title: 'Heroes Tonight (feat. Johnning)', artist: 'Janji',                 album: 'NCS Release',   src: 'songs/5.mp3',  cover: 'covers/5.jpg' },
+    { id: 's1',  title: 'Mortals',                      artist: 'Warriyo',                  album: 'NCS Release',   src: '1.mp3',  cover: 'covers/1.jpg' },
+    { id: 's2',  title: 'Huma-Huma',                    artist: 'Cielo',                    album: 'Single',        src: '2.mp3',  cover: 'covers/2.jpg' },
+    { id: 's3',  title: 'Invincible',                   artist: 'DEAF KEV',                 album: 'NCS Release',   src: '3.mp3',  cover: 'covers/3.jpg' },
+    { id: 's4',  title: 'My Heart',                     artist: 'Different Heaven & EH!DE', album: 'NCS Release',   src: '4.mp3',  cover: 'covers/4.jpg' },
+    { id: 's5',  title: 'Heroes Tonight (feat. Johnning)', artist: 'Janji',                 album: 'NCS Release',   src: '5.mp3',  cover: 'covers/5.jpg' },
     { id: 's6',  title: 'Rabba',                        artist: 'Salam-e-Ishq',             album: 'Salam-e-Ishq',  src: 'songs/6.mp3',  cover: 'covers/6.jpg' },
     { id: 's7',  title: 'Sakhiyaan',                    artist: 'Salam-e-Ishq',             album: 'Salam-e-Ishq',  src: 'songs/7.mp3',  cover: 'covers/7.jpg' },
     { id: 's8',  title: 'Bhula Dena',                   artist: 'Salam-e-Ishq',             album: 'Salam-e-Ishq',  src: 'songs/8.mp3',  cover: 'covers/8.jpg' },
