@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#000000">
+    <title>Akshatha's Beats </title>
+    <link rel="icon" href="logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+
+    <!-- ============ SIDEBAR ============ -->
+    <aside class="sidebar" id="sidebar">
+        <div class="card">
+            <div class="brand"><img src="logo.png" alt=""> <span>Akshatha's Beats</span></div>
+            <nav class="nav">
+                <button class="nav-item active" data-view="home"><i class="fa-solid fa-house"></i><span>Home</span></button>
+                <button class="nav-item" data-view="search"><i class="fa-solid fa-magnifying-glass"></i><span>Search</span></button>
+                <button class="nav-item" data-view="queue"><i class="fa-solid fa-list"></i><span>Queue</span></button>
+            </nav>
+        </div>
+
+        <div class="card library">
+            <div class="library-head">
+                <span><i class="fa-solid fa-layer-group"></i>&nbsp; Your Library</span>
+                <button class="icon-btn" id="newPlaylistBtn" title="Create playlist"><i class="fa-solid fa-plus"></i></button>
+            </div>
+            <ul id="playlistList"></ul>
+            <label class="upload-btn" title="Or drag & drop audio files anywhere">
+                <i class="fa-solid fa-folder-open"></i> Add songs from your device
+                <input type="file" id="fileInput" accept="audio/*" multiple hidden>
+            </label>
+        </div>
+    </aside>
+    <div class="scrim" id="scrim"></div>
+
+    <!-- ============ MAIN ============ -->
+    <main class="main" id="main">
+        <header class="topbar">
+            <button class="icon-btn menu-toggle" id="menuToggle" aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
+            <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="search" id="searchInput" placeholder="What do you want to listen to?" autocomplete="off">
+            </div>
+            <span class="greeting" id="greeting"></span>
+            <button class="icon-btn" id="helpBtn" title="Keyboard shortcuts (?)"><i class="fa-regular fa-keyboard"></i></button>
+        </header>
+
+        <section class="hero" id="hero">
+            <div class="hero-art" id="heroArt"></div>
+            <div class="hero-text">
+                <p class="eyebrow" id="viewEyebrow">Playlist</p>
+                <h1 id="viewTitle">Best of NCS</h1>
+                <p class="muted" id="viewSubtitle"></p>
+            </div>
+        </section>
+
+        <div class="hero-actions">
+            <button class="btn-play-big" id="playAllBtn" aria-label="Play"><i class="fa-solid fa-play"></i></button>
+            <button class="icon-btn" id="shuffleAllBtn" title="Shuffle play"><i class="fa-solid fa-shuffle"></i></button>
+            <button class="icon-btn" id="renamePlBtn" title="Rename playlist" hidden><i class="fa-solid fa-pen"></i></button>
+            <button class="icon-btn" id="deletePlBtn" title="Delete playlist" hidden><i class="fa-solid fa-trash"></i></button>
+        </div>
+
+        <section class="tracklist">
+            <div class="track-head">
+                <span>#</span><span>Title</span><span class="t-album">Album</span>
+                <span class="t-head-dur"><i class="fa-regular fa-clock"></i></span>
+            </div>
+            <ol id="trackList"></ol>
+            <p class="empty" id="emptyState" hidden>Nothing here yet.</p>
+        </section>
+    </main>
+
+    <!-- ============ NOW PLAYING PANEL ============ -->
+    <aside class="now-panel" id="nowPanel">
+        <h3>Now Playing</h3>
+        <div class="np-cover">
+            <img id="npCover" alt="">
+            <canvas id="visualizer"></canvas>
+        </div>
+        <h2 id="npTitle">—</h2>
+        <p class="muted" id="npArtist"></p>
+        <div class="np-next-head">
+            <h4>Next in queue</h4>
+            <button class="link-btn" data-view="queue">Open queue</button>
+        </div>
+        <ol id="upNext"></ol>
+    </aside>
+</div>
+
+<!-- ============ PLAYER BAR ============ -->
+<footer class="player">
+    <div class="player-left">
+        <img id="pCover" alt="">
+        <div class="p-meta">
+            <span id="masterSongName">Warriyo - Mortals [NCS Release]</span>
+            <span id="masterArtist" class="muted"></span>
+        </div>
+        <button class="icon-btn" id="likeBtn" title="Like (L)"><i class="fa-regular fa-heart"></i></button>
+        <img src="playing.gif" alt="" id="gif">
+    </div>
+
+    <div class="player-center">
+        <div class="controls">
+            <button class="icon-btn" id="shuffleBtn" title="Shuffle (S)"><i class="fa-solid fa-shuffle"></i></button>
+            <button class="icon-btn big" id="previous" title="Previous (P)"><i class="fa-solid fa-backward-step"></i></button>
+            <button class="play-btn" id="masterPlay" title="Play / Pause (Space)"><i class="fa-solid fa-play"></i></button>
+            <button class="icon-btn big" id="next" title="Next (N)"><i class="fa-solid fa-forward-step"></i></button>
+            <button class="icon-btn" id="repeatBtn" title="Repeat (R)"><i class="fa-solid fa-repeat"></i><span class="one">1</span></button>
+        </div>
+        <div class="progress-row">
+            <span id="currentTime">0:00</span>
+            <input type="range" id="myProgressBar" min="0" max="1000" value="0" step="1" aria-label="Seek">
+            <span id="durationTime">0:00</span>
+        </div>
+    </div>
+
+    <div class="player-right">
+        <select id="speedSelect" title="Playback speed">
+            <option value="0.75">0.75×</option>
+            <option value="1" selected>1×</option>
+            <option value="1.25">1.25×</option>
+            <option value="1.5">1.5×</option>
+            <option value="2">2×</option>
+        </select>
+        <button class="icon-btn" id="sleepBtn" title="Sleep timer"><i class="fa-solid fa-moon"></i><span class="badge"></span></button>
+        <button class="icon-btn" id="queueBtn" title="Queue (Q)"><i class="fa-solid fa-list"></i></button>
+        <button class="icon-btn" id="npBtn" title="Now playing panel"><i class="fa-solid fa-table-columns"></i></button>
+        <button class="icon-btn" id="muteBtn" title="Mute (M)"><i class="fa-solid fa-volume-high"></i></button>
+        <input type="range" id="volumeBar" min="0" max="100" value="80" aria-label="Volume">
+    </div>
+</footer>
+
+<!-- Floating UI -->
+<div class="menu" id="menu" hidden></div>
+<div class="toast" id="toast"></div>
+
+<dialog id="helpDialog">
+    <h3>Keyboard shortcuts</h3>
+    <ul class="shortcuts">
+        <li><kbd>Space</kbd> Play / pause</li>
+        <li><kbd>→</kbd> / <kbd>←</kbd> Seek 5 seconds</li>
+        <li><kbd>N</kbd> / <kbd>P</kbd> Next / previous song</li>
+        <li><kbd>↑</kbd> / <kbd>↓</kbd> Volume</li>
+        <li><kbd>M</kbd> Mute</li>
+        <li><kbd>S</kbd> Shuffle</li>
+        <li><kbd>R</kbd> Repeat (off → all → one)</li>
+        <li><kbd>L</kbd> Like current song</li>
+        <li><kbd>Q</kbd> Open queue</li>
+        <li><kbd>/</kbd> Search</li>
+    </ul>
+    <p class="muted small">Tip: right-click a song for more options, or drag it onto a playlist.</p>
+    <form method="dialog"><button class="pill-btn">Got it</button></form>
+</dialog>
+
+<script src="script.js"></script>
+</body>
+</html>
