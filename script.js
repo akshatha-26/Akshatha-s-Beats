@@ -15,7 +15,7 @@ const SONGS = [
     { id: 's8',  title: 'Bhula Dena',                   artist: 'Salam-e-Ishq',             album: 'Salam-e-Ishq',  src: '8.mp3',  cover: 'covers/8.jpg' },
     { id: 's9',  title: 'Tumhari Kasam',                artist: 'Salam-e-Ishq',             album: 'Salam-e-Ishq',  src: '9.mp3',  cover: 'covers/9.jpg' },
     { id: 's10', title: 'Na Jaana',                     artist: 'Salam-e-Ishq',             album: 'Salam-e-Ishq',  src: '10.mp3', cover: 'covers/10.jpg' },
-    { id: 's10', title: 'swami',                        artist: 'Sunil',             album: 'Salam-e-Ishq',  src: '10.mp3', cover: 'covers/music by S.jpg' },
+    { id: 's10', title: 'swami',                        artist: 'Sunil',             album: 'Salam-e-Ishq',  src: 'Music by S.mp3', cover: 'covers/Music by S.jpg' },
 ];
 
 const PLACEHOLDER = 'data:image/svg+xml;utf8,' + encodeURIComponent(
